@@ -32,6 +32,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :dvelopment do
+  gem 'sqlite3'
+end
+
 group :production do
   gem 'pg'
 end
