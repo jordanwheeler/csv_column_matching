@@ -1,5 +1,7 @@
-<h3>CSV Column Matching Tool V1</h3>
-<%= form_tag import_csv_importers_path, multipart: true, class: "form-horizontal" do %>
+<h2>CSV Column Matching Tool V1</h2>
+<h4>Find matching values in the SECOND file uploaded.</h4>
+<br />
+<%= form_tag results_path, multipart: true, class: "form-horizontal" do %>
 <fieldset>
   <div class="control-group">
   <%= label_tag "csv1", "Upload the first file with the intial column used for searching", class: "control-label" %>

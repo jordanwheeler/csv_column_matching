@@ -6,12 +6,8 @@ CsvHashes::Application.routes.draw do
   #post 'csv_importers#import'
   root 'csv_importers#index'
   #get 'csv_matchers#results'
-  resources :csv_importers do
-    collection do
-      get :import
-      post :import
-    end
-  end
+
+  post '/results' => 'csv_importers#import'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

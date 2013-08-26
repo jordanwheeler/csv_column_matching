@@ -9,7 +9,7 @@ class CsvImporter
     @csv_data
   end
 
-  def self.matching_data(initial_data, search_data, column, matched_column)
+  def self.matching_data(initial_data, search_data, column, matched_column=nil)
 
     matching_data = {}
     i = 1
