@@ -1,0 +1,35 @@
+<h3>CSV Column Matching Tool V1</h3>
+<%= form_tag import_csv_importers_path, multipart: true, class: "form-horizontal" do %>
+<fieldset>
+  <div class="control-group">
+  <%= label_tag "csv1", "Upload the first file with the intial column used for searching", class: "control-label" %>
+  <div class="controls">
+  <%= file_field_tag :csv1, class: "btn", required: true %>
+  </div>
+</div>
+  <div class="control-group">
+  <%= label_tag "csv2", "Upload the second file which includes the column to be matched", class: "control-label" %>
+  <div class="controls">
+  <%= file_field_tag :csv2, class: "btn", required: true %>
+  </div>
+  </div>
+  <div class="control-group">
+    <h4>THESE FIELDS ARE CASE SENSITIVE:</h4><br />
+  <%= label_tag "column", "Enter the name of the column whose values will be matched between files", class: "control-label" %>
+  <div class="controls">
+  <%= text_field_tag :column, nil, required: true %>
+  </div>
+  </div>
+  <div class="control-group">
+  <%= label_tag "matched_column", "Enter the name of the column you'd like to find in the second file  (Leaving this field blank will return the entire matching row)", class: "control-label" %>
+  <div class="controls">
+  <%= text_field_tag :matched_column %>
+  </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <%= submit_tag 'Search for Matching Values', class: "btn btn-primary" %>
+    </div>
+  </div>
+</fieldset>
+<% end %>

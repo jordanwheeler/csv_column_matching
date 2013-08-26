@@ -3,8 +3,15 @@ CsvHashes::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'csv_matchers#index'
-
+  #post 'csv_importers#import'
+  root 'csv_importers#index'
+  #get 'csv_matchers#results'
+  resources :csv_importers do
+    collection do
+      get :import
+      post :import
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

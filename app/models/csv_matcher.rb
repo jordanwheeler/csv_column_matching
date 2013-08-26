@@ -1,5 +1,3 @@
-require 'csv'
-
 class CsvMatcher
   extend ActiveModel::Naming
 
@@ -21,17 +19,6 @@ class CsvMatcher
       csv_numbers_to_search_hash << row.to_hash
     end
     csv_numbers_to_search_hash
-    end
-
-    def matching_data(initial_data, search_data)
-
-    matching_set_of_data = {}
-    search_data.each do |search_number|
-      initial_data.each do |intial_data|
-        matching_set_of_data[search_number.values.first] = intial_data["Number"] if intial_data["CTName"] == search_number.values.first
-      end
-    end
-    matching_set_of_data
     end
 
 end
